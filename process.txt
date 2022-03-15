@@ -1,0 +1,29 @@
+npm init -y
+
+npm i -D webpack webpack-cli webpack-dev-server@next        // @next로 cli 와 dev-server 버전을 관계시킴
+
+"dev": "webpack-dev-server --mode development",             // package.json script 부분에 작성
+"build": "webpack --mode production"                        // 상: parcel index.html과 동일 하: parcel build index.html과 동일
+                                                            // webpack : 기본패키지, webpack-cli : webpack의 기능을 cli로 이용하기위한 인터페이스 webpack-dev-server : 개발단계에서 서버를 더 편하게 열기위한 패키지
+                                                            // --mode development,production : 개발모드를 명시
+
+npm i -D html-webpack-plugin                          // webpack의 시작경로를 index.html로 하기위함
+npm i -D copy-webpack-plugin                                // 정적 파일 연결
+
+npm i -D css-loader style-loader                            // main.js에 import한 css를 webpack이 읽을 수 있게 함 -> 이경우 html에 .css를 link할 필요가 없는것을 유의
+
+npm i -D sass-loader sass                                   // css에 추가로 scss-loader로 scss를 읽어낼수 있게하고 sass가 그 읽을수 있는 기능을 제공
+
+npm i -D postcss autoprefixer postcss-loader                // webpack에서 auto-prefixer 기능 제공을 하는 모듈
+
+package.json에 "browserslist":[
+              "> 1%",
+             "last 2 versions"
+             ]                  항목 추가
+
+.postcssrc.js 작성                                          // autoprefixer를 plugin으로써 (require)가져와서 postcss의 plugin 배열에 삽입
+
+npm i -D @babel/core @babel/preset-env @babel/plugin-transform-runtime          // babel 을 webpack에 활용하기위한 npm 명령어
+npm i -D babel-loader                                                           // babel 기능을 load할 수 있게 함
+
+.babelrc.js 작성
