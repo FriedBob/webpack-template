@@ -1,5 +1,4 @@
 .cache
 .DS_Store
-node_modules
-
-dist도넣어야하지만생략
+node_modules/
+dist/
