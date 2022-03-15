@@ -34,7 +34,7 @@ module.exports={
             },
             {
                 test: /\.js$/,                      // webpack이 babel을 해석하려면 babel-loader가 필요함
-                user: [                             // .js로 끝나는 파일들을 webpack이 babel loader로 읽어들여서 babel이 적용될수 있게 만듬
+                use: [                             // .js로 끝나는 파일들을 webpack이 babel loader로 읽어들여서 babel이 적용될수 있게 만듬
                     'babel-loader'
                 ]
             }
